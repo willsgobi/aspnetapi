@@ -1,0 +1,12 @@
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\bin\Release\net5.0\DevIO.Business.deps.json
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\bin\Release\net5.0\DevIO.Business.dll
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\bin\Release\net5.0\ref\DevIO.Business.dll
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\bin\Release\net5.0\DevIO.Business.pdb
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\DevIO.Business.csproj.AssemblyReference.cache
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\DevIO.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\DevIO.Business.AssemblyInfoInputs.cache
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\DevIO.Business.AssemblyInfo.cs
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\DevIO.Business.csproj.CoreCompileInputs.cache
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\DevIO.Business.dll
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\ref\DevIO.Business.dll
+C:\dotnetlab\MyAppMvcComplete\src\DevIO.Business\obj\Release\net5.0\DevIO.Business.pdb
