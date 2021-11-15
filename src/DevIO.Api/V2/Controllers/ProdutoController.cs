@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DevIO.Api.Controllers;
 using DevIO.Api.Extensions;
 using DevIO.App.ViewModels;
 using DevIO.Business.Interfaces;
@@ -11,10 +12,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace DevIO.Api.Controllers
+namespace DevIO.Api.V2.Controllers
 {
     [Authorize]
-    [Route("api/produtos")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/produtos")]
     public class ProdutoController : MainController
     {
         private readonly IProdutoRepository _produtoRepository;
