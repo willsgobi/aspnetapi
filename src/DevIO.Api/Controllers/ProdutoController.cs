@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using DevIO.Api.Extensions;
 using DevIO.App.ViewModels;
 using DevIO.Business.Interfaces;
 using DevIO.Business.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace DevIO.Api.Controllers
 {
+    [Authorize]
     [Route("api/produtos")]
     public class ProdutoController : MainController
     {
@@ -18,19 +21,21 @@ namespace DevIO.Api.Controllers
         private readonly IProdutoService _produtoService;
         private readonly IMapper _mapper;
 
-        public ProdutoController(IProdutoRepository produtoRepository, IProdutoService produtoService, IMapper mapper, INotificador notificador) : base(notificador)
+        public ProdutoController(IProdutoRepository produtoRepository, IProdutoService produtoService, IMapper mapper, INotificador notificador, IUser user) : base(notificador, user)
         {
             _produtoRepository = produtoRepository;
             _produtoService = produtoService;
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<ProdutoViewModel>> ObterTodos()
         {
             return _mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores());
         }
 
+        [AllowAnonymous]
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> ObterPorId(Guid id)
         {
@@ -42,6 +47,7 @@ namespace DevIO.Api.Controllers
             return produtoViewModel;
         }
 
+        [ClaimsAuthorize("Produto", "Inserir")]
         [HttpPost]
         public async Task<ActionResult<ProdutoViewModel>> Adicionar(ProdutoViewModel produtoViewModel)
         {
@@ -62,6 +68,7 @@ namespace DevIO.Api.Controllers
             return CustomResponse(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Inserir")]
         [HttpPost("Adicionar")]
         public async Task<ActionResult<ProdutoViewModel>> AdicionarAlternativo(ProdutoImagemViewModel produtoViewModel)
         {
@@ -82,6 +89,7 @@ namespace DevIO.Api.Controllers
             return CustomResponse(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Atualizar")]
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
         {
@@ -119,6 +127,7 @@ namespace DevIO.Api.Controllers
 
         }
 
+        [ClaimsAuthorize("Produto", "Excluir")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> Excluir(Guid id)
         {
