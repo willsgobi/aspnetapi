@@ -14,6 +14,8 @@ C:\dotnetlab\MyAppMvcComplete\src\DevIO.Data\obj\Debug\net5.0\DevIO.Data.dll
 C:\dotnetlab\MyAppMvcComplete\src\DevIO.Data\obj\Debug\net5.0\ref\DevIO.Data.dll
 C:\dotnetlab\MyAppMvcComplete\src\DevIO.Data\obj\Debug\net5.0\DevIO.Data.pdb
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\DevIO.Data.deps.json
+C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\DevIO.Data.runtimeconfig.json
+C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\DevIO.Data.runtimeconfig.dev.json
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\DevIO.Data.dll
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\ref\DevIO.Data.dll
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\DevIO.Data.pdb
@@ -28,6 +30,4 @@ C:\Dev\MinhaApiCompleta\src\DevIO.Data\obj\Debug\net5.0\DevIO.Data.csproj.CopyCo
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\obj\Debug\net5.0\DevIO.Data.dll
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\obj\Debug\net5.0\ref\DevIO.Data.dll
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\obj\Debug\net5.0\DevIO.Data.pdb
-C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\DevIO.Data.runtimeconfig.json
-C:\Dev\MinhaApiCompleta\src\DevIO.Data\bin\Debug\net5.0\DevIO.Data.runtimeconfig.dev.json
 C:\Dev\MinhaApiCompleta\src\DevIO.Data\obj\Debug\net5.0\DevIO.Data.genruntimeconfig.cache

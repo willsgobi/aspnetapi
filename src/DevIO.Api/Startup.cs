@@ -38,14 +38,15 @@ namespace DevIO.Api
                 }
             );
 
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+            }).AddNewtonsoftJson();
+
+            services.WebApiConfig();
+
+            services.AddIdentityConfiguration(Configuration);            
 
             services.AddAutoMapper(typeof(Startup));
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevIO.Api", Version = "v1" });
-            });
 
             services.ResolveDependences();
         }
@@ -58,13 +59,13 @@ namespace DevIO.Api
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DevIO.Api v1"));
+            } else
+            {
+                app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseMvcConfiguration();
 
             app.UseEndpoints(endpoints =>
             {
