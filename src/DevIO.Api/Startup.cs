@@ -1,6 +1,9 @@
 using DevIO.Api.Configuration;
+using DevIO.Api.Extensions;
 using DevIO.Data.Context;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +44,8 @@ namespace DevIO.Api
             services.AddSwaggerConfig();
 
             services.ResolveDependences();
+
+            services.AddLoggingConfiguration(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +55,7 @@ namespace DevIO.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseCors("Development");
-            } 
+            }
             else
             {
                 app.UseCors("Production");
@@ -58,6 +63,9 @@ namespace DevIO.Api
             }
 
             app.UseAuthentication();
+
+            app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseMvcConfiguration();
 
             app.UseEndpoints(endpoints =>
@@ -66,6 +74,8 @@ namespace DevIO.Api
             });
 
             app.UseSwaggerConfig(provider);
+
+            app.UseLoggingConfiguration();
         }
     }
 }
